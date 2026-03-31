@@ -1,0 +1,97 @@
+
+@token = yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MTBhZDQxNTgyMTdjMzlmNDIzNTAzMSIsImlhdCI6MTc2MzA1NzM3OCwiZXhwIjoxNzYzMTQzNzc4fQ.eU1vA9O0FWsZw4X1OvE6stQ0AzK-XWUkBr8RhR8eEXA
+
+### get all users
+GET http://localhost:4000/api/users
+
+### get user by id
+GET http://localhost:4000/api/users/6910ad4158217c39f4235031
+
+###delete user
+DELETE http://localhost:4000/api/users/69160be92834bc95db12129c
+
+### Register user
+POST http://localhost:4000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "maruca",
+    "email": "maruca@ejemplo.com",
+    "password": "123456"
+}
+
+### Login user
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "bona@ejemplo.com",
+    "password": "123456"
+}
+
+### Get current user profile
+GET http://localhost:4000/api/profile/me
+Authorization: Bearer {{token}}
+
+### Create a new product
+POST http://localhost:4000/api/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "perfume",
+    "description": "Este es un producto de prueba viejo",
+    "price": 100,
+    "stock": 50
+}
+### delete a product
+DELETE http://localhost:4000/api/products/68f8f16eb10d3877e7609e59
+Authorization: Bearer {{token}}
+
+### get all products
+GET http://localhost:4000/api/products
+
+### get product by id
+GET http://localhost:4000/api/products/6910adb058217c39f4235038
+
+### get my products
+GET http://localhost:4000/api/products/mine
+Authorization: Bearer {{token}}
+
+### create conversation
+POST http://localhost:4000/api/conversations
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "productId": "6910ada958217c39f4235035"
+}
+
+### get my conversations
+GET http://localhost:4000/api/conversations/mine
+Authorization: Bearer {{token}}
+
+### get conversations
+GET http://localhost:4000/api/conversations
+
+### create message
+POST http://localhost:4000/api/messages
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "conversationId": "69149448820e711e790aea03",
+    "content": "Estoy interesado"
+}   
+
+### get all messages
+GET http://localhost:4000/api/messages
+6910ad4158217c39f4235031
+### get messages by conversation id
+GET http://localhost:4000/api/conversations/69161ea19b551dd5ff95d8e6
+Authorization: Bearer {{token}}
+
+###get product by seller id
+
+GET http://localhost:4000/api/products/seller/
+
