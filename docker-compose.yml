@@ -1,8 +1,8 @@
 services:
   mongodb:
-    image: mongo:latest
+    image: mongo:7.0
     container_name: ecommerce-mongodb
-    restart: no
+    restart: "no"
     environment:
       MONGO_INITDB_DATABASE: ecommerce
     volumes:
@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: backend.Dockerfile
     container_name: ecommerce-backend
-    restart: no
+    restart: "no"
     environment:
       PORT: 4000
       MONGO_URI: mongodb://mongodb:27017/ecommerce
@@ -39,7 +39,7 @@ services:
       context: .
       dockerfile: frontend.Dockerfile
     container_name: ecommerce-frontend
-    restart: no
+    restart: "no"
     ports:
       - "80:80"
     depends_on:
